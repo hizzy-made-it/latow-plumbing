@@ -1,0 +1,147 @@
+export const company = {
+  name: "Latow Brothers Plumbing",
+  legalName: "Latow Brothers Plumbing, Inc.",
+  founded: 1978,
+  yearsInBusiness: new Date().getFullYear() - 1978,
+  phone: "(386) 775-4422",
+  phoneHref: "tel:+13867754422",
+  email: "admin@latowsplumbingfl.com",
+  emailHref: "mailto:admin@latowsplumbingfl.com",
+  address: {
+    street: "180 W Blue Springs Ave",
+    city: "Orange City",
+    state: "FL",
+    zip: "32763",
+    full: "180 W Blue Springs Ave, Orange City, FL 32763",
+  },
+  mapsHref:
+    "https://www.google.com/maps/search/?api=1&query=180+W+Blue+Springs+Ave+Orange+City+FL+32763",
+  licenses: ["CFC057023", "CFC057024"],
+  rating: { value: "4.6", count: 75 },
+  facebookRecommend: "96%",
+  hours: [
+    { day: "Monday", open: "8:00 am", close: "4:00 pm" },
+    { day: "Tuesday", open: "8:00 am", close: "4:00 pm" },
+    { day: "Wednesday", open: "8:00 am", close: "4:00 pm" },
+    { day: "Thursday", open: "8:00 am", close: "4:00 pm" },
+    { day: "Friday", open: "8:00 am", close: "4:00 pm" },
+    { day: "Saturday", open: null, close: null },
+    { day: "Sunday", open: null, close: null },
+  ],
+  promises: [
+    "Locally owned since 1978",
+    "1-Year Labor Warranty",
+    "Licensed CFC057023",
+    "Discounts available",
+  ],
+} as const;
+
+export const serviceAreas = [
+  {
+    city: "Orange City",
+    zip: "32763",
+    note: "Home base. Our shop is on W Blue Springs Ave — most Orange City calls are the shortest drive we make all day.",
+  },
+  {
+    city: "DeLand",
+    zip: "32720, 32724",
+    note: "Historic homes with original galvanized supply lines. Re-piping and water heater work make up most of what we do here.",
+  },
+  {
+    city: "Deltona",
+    zip: "32725, 32738",
+    note: "Volusia's largest city and heavy on well water. Water treatment and pressure tank service are constant here.",
+  },
+  {
+    city: "DeBary",
+    zip: "32713",
+    note: "Newer construction alongside 1980s builds. Water heater replacement and repipe estimates are our common calls.",
+  },
+  {
+    city: "Lake Helen",
+    zip: "32744",
+    note: "Small-town Volusia with a lot of older septic and well setups. Sewer, drain and treatment work.",
+  },
+  {
+    city: "Enterprise",
+    zip: "32725",
+    note: "Lakeside properties where sump pumps and drainage genuinely matter. We service the whole area.",
+  },
+  {
+    city: "Sanford",
+    zip: "32771, 32773",
+    note: "Just across the county line. Commercial and residential repairs plus new construction rough-in.",
+  },
+  {
+    city: "Cassadaga & Osteen",
+    zip: "32706, 32764",
+    note: "Rural Volusia. Well systems, water treatment, and long-run supply line repairs.",
+  },
+] as const;
+
+export const reviews = [
+  {
+    name: "Robert H.",
+    date: "February 2026",
+    rating: 5,
+    text: "My experience with Latow Brothers Plumbing was outstanding! Right in the middle of the unusual very cold weather my water heater goes out. I called the office and spoke with Michelle, she was so nice. She advised me they were very backed up due to the cold weather but if she had any cancellations she would fit me in right away. She called me back later that day to let me know they had a cancellation. The technicians Dave and Charlie arrived in the window of time I was given and they were awesome. They diagnosed the problem right away, replaced the defective part, educated me about my water heater, and were very knowledgeable, courteous, and professional. Also the price was extremely reasonable.",
+    service: "Water Heaters",
+    featured: true,
+  },
+  {
+    name: "Lorenzo M.",
+    date: "April 2026",
+    rating: 5,
+    text: "We had a great experience with this plumbing company from start to finish. Their communication was clear and consistent — they kept us informed every step of the way and showed up exactly when they said they would. The work itself was done professionally and efficiently, and you can tell they take pride in what they do. What really stood out was how clean they left everything when the job was done — no mess, no hassle.",
+    service: "General Plumbing",
+    featured: true,
+  },
+  {
+    name: "Erin K.",
+    date: "November 2025",
+    rating: 5,
+    text: "Great business! These guys were able to come out same day to repair two valves. They were quick, polite and the pricing was very fair. The lady on the phone was so sweet and helpful to my mom. Thank you!",
+    service: "Plumbing Repairs",
+    featured: true,
+  },
+  {
+    name: "Mishelle R.",
+    date: "July 2026",
+    rating: 5,
+    text: "Honest company and very fair. Thank you for all you do at my business. Central Florida Pawn and Gun.",
+    service: "Commercial",
+    featured: false,
+  },
+  {
+    name: "Michael R.",
+    date: "May 2026",
+    rating: 5,
+    text: "Excellent service! Rick was very helpful and knowledgeable. Clean work habits.",
+    service: "Plumbing Repairs",
+    featured: false,
+  },
+  {
+    name: "TMH",
+    date: "February 2026",
+    rating: 5,
+    text: "What can I say… these guys show up on time and do quality work for a fair price.",
+    service: "General Plumbing",
+    featured: false,
+  },
+  {
+    name: "Shawn B.",
+    date: "2025",
+    rating: 5,
+    text: "George and Dave did a great job. I've referred them to all of my customers since 2017. They are efficient, knowledgeable and very competitive. I will continue to refer their business to my customers. Great job. And thank you again.",
+    service: "General Plumbing",
+    featured: false,
+  },
+  {
+    name: "Yelp Customer",
+    date: "2025",
+    rating: 5,
+    text: "Responded well and did fast work. Our water heater went out and dad went there and made a deal and they were done in an hour and a half.",
+    service: "Water Heaters",
+    featured: false,
+  },
+] as const;

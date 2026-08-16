@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #060f1a;
+  --color-navy-900: #0b1b2e;
+  --color-navy-800: #11253c;
+  --color-navy-700: #1a3450;
+  --color-navy-600: #24455f;
+
+  --color-water-700: #245a6d;
+  --color-water-600: #32748a;
+  --color-water-500: #428d9d;
+  --color-water-400: #5fb5ce;
+  --color-water-300: #8fe3f5;
+  --color-water-050: #e9f9fb;
+
+  --color-copper-700: #8a4e22;
+  --color-copper-500: #c4763a;
+  --color-copper-300: #e2a472;
+
+  --color-bone: #f5f7fa;
+  --color-bone-200: #e3e8ef;
+  --color-slate-600: #54657a;
+
+  --radius-card: 2px;
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: #0b1b2e;
+  --foreground: #f5f7fa;
+  --border: #1a3450;
+  --ring: #8fe3f5;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-navy-900);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  ::selection {
+    background-color: var(--color-copper-500);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-water-300);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Fluid type scale */
+  .t-display-xl {
+    font-size: clamp(3.25rem, 9vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+
+  .t-display-lg {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+
+  .t-display-md {
+    font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .t-body-lg {
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    line-height: 1.6;
+  }
+
+  .t-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    line-height: 1.2;
+  }
+
+  /* Subtle noise to kill gradient banding on dark fields */
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Slow water drift used behind the hero when WebGL is unavailable */
+  .drift-a {
+    animation: drift-a 26s ease-in-out infinite alternate;
+  }
+
+  .drift-b {
+    animation: drift-b 34s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift-a {
+    from {
+      transform: translate3d(-4%, -2%, 0) scale(1.05);
+      opacity: 0.55;
+    }
+    to {
+      transform: translate3d(5%, 3%, 0) scale(1.18);
+      opacity: 0.85;
+    }
+  }
+
+  @keyframes drift-b {
+    from {
+      transform: translate3d(6%, 4%, 0) scale(1.15);
+      opacity: 0.4;
+    }
+    to {
+      transform: translate3d(-5%, -3%, 0) scale(1);
+      opacity: 0.7;
+    }
+  }
+
+  .link-water {
+    color: var(--color-water-400);
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+  }
+
+  .link-water:hover {
+    color: var(--color-water-300);
+    text-decoration: underline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

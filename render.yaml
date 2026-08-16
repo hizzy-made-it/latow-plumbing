@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: latow-plumbing
+    runtime: node
+    plan: free
+    region: ohio
+    buildCommand: bun install --frozen-lockfile && cd packages/web && bunx vite build
+    startCommand: bun packages/web/src/server.ts
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_AUTH_TOKEN
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
