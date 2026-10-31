@@ -134,6 +134,17 @@ export function Footer() {
             Florida.
           </p>
         </div>
+        <p className="mt-4 text-[0.78rem] text-bone/60">
+          Website by{" "}
+          <a
+            href="https://hdconnex.com"
+            target="_blank"
+            rel="noopener"
+            className="underline underline-offset-2 transition-colors hover:text-water-300"
+          >
+            HD Connex
+          </a>
+        </p>
       </div>
     </footer>
   );
